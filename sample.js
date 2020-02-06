@@ -22,5 +22,5 @@ client.query(query, function(err, res) {
         console.log('insert成功。TBLを確認してください。');
         // console.log(res);
     }
-    client.end()
+    // client.end()
 });
