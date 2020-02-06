@@ -10,4 +10,5 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ['node', 'sample.js']
+# CMD ['node', 'sample.js']
+RUN node sample.js
