@@ -1,0 +1,14 @@
+{
+    "name": "docker_test_app",
+    "version": "1.0.0",
+    "description": "sample application of Node.js on Docker",
+    "author": "Kazufumi Hara",
+    "main": "sample.js",
+    "scripts": {
+        "start": "node sample.js"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "pg": "^7.18.1"
+    }
+}
