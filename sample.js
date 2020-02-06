@@ -6,7 +6,7 @@ const { Client } = require('pg');
         user: 'postgres',
         password: 'postgres',
         database: 'postgres', // ここは、自分か作成したDB名に変更する
-        host: 'localhost',
+        host: '172.17.0.2',
         port: 5432
     });
 
