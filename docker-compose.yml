@@ -1,0 +1,27 @@
+# docker-composeのバージョン
+version: "3"
+
+# 立ち上げるコンテナをservice以下に構成する
+services:
+
+  # postgresqlコンテナを立ち上げるための設定記述
+  # ※IPアドレスを意識しなくとも、docker-composeで立ち上げた他コンテナは、ここで指定した名称でアクセスが可能になる
+  # docker-composeを作成するメリット
+  #  1. 上記のIPアドレスを意識しないで済む
+  #  2. 関連コンテナを一括で起動でき、コンテナ間の通信を許容する
+  postgres:
+    build: # postgresql用のDockerfileをビルドするための命令
+      context: ./psql
+      dockerfile: Dockerfile
+      container_name: postgres-test # コンテナの名称を決定
+    
+  nodeapp:
+    build:
+      context: /
+      dockerfile: Dockerfile
+      container_name: nodeapp
+
+    # ホストからコンテナへのポートフォワーディングを設定
+    # ⇒localhost:3000でアクセスすると、本コンテナのポート3000にアクセス可能になる
+    ports:
+      - 3000:3000
